@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ORZU Study Planner</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav>
+      <h2>ORZU</h2>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle">☀️</button>
+        <a href="#planner" class="nav-btn">Start Planning</a>
+        <div><span id="streak"></span></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <span>ORZUDAN NATIJAGACHA</span>
+      <h1>Plan your SAT and IELTS preparation with clarity.</h1>
+      <p>
+        ORZU helps students organize study goals, daily tasks, and progress in one simple place.
+      </p>
+      <a href="#planner" class="btn">Create My Plan</a>
+    </div>
+  </section>
+
+  <!-- Dashboard -->
+  <section class="dashboard">
+
+  <div class="dashboard-card">
+    <h3>🔥 Streak</h3>
+    <p id="streak-card">Start your streak today</p>
+  </div>
+
+  <div class="dashboard-card">
+    <h3>🎯 Goal</h3>
+    <p id="goal-display">No goal yet</p>
+  </div>
+
+  <div class="dashboard-card">
+    <h3>⏳ Days Left</h3>
+    <p id="days-left-display">0 day(s)</p>
+  </div>
+
+</section>
+
+  <!-- Planner Section -->
+  <section id="planner" class="planner">
+    <h2>Study Planner</h2>
+    <p>Choose your goal and create your first study plan.</p>
+
+    <div class="planner-layout">
+
+      <!-- Left Side: Form -->
+      <div class="planner-left">
+        <form class="planner-form">
+
+          <div class="form-group">
+            <label for="exam">Exam Type</label>
+            <select id="exam">
+              <option value="">Select exam</option>
+              <option value="sat">SAT</option>
+              <option value="ielts">IELTS</option>
+              <option value="both">SAT + IELTS</option>
+            </select>
+          </div>
+
+          <div class="form-group sat-current-group">
+            <label for="sat-current">Current SAT Score</label>
+            <input type="number" id="sat-current" placeholder="Example: 1100" min="400" max="1600" />
+          </div>
+
+          <div class="form-group sat-target-group">
+            <label for="sat-target">SAT Target Score</label>
+            <input type="number" id="sat-target" placeholder="Example: 1500" min="400" max="1600" />
+          </div>
+
+          <div class="form-group ielts-current-group">
+            <label for="ielts-current">Current IELTS Band</label>
+            <input type="number" id="ielts-current" placeholder="Example: 6.0" min="1" max="9" step="0.5" />
+          </div>
+
+          <div class="form-group ielts-target-group">
+            <label for="ielts-target">IELTS Target Band</label>
+            <input type="number" id="ielts-target" placeholder="Example: 7.5" min="1" max="9" step="0.5" />
+          </div>
+
+          <div class="form-group">
+            <label for="hours">Study Hours Per Day</label>
+            <input type="number" id="hours" placeholder="Example: 3" min="1" max="12" />
+          </div>
+
+          <div class="form-group">
+            <label for="date">Exam Date</label>
+            <input type="date" id="date" />
+          </div>
+
+          <button type="submit">Generate Plan</button>
+        </form>
+      </div>
+
+      <!-- Right Side: Generated Plan -->
+      <div class="planner-right">
+        <div id="plan-result" class="plan-result">
+          <div class="empty-plan">
+
+            <div class="empty-icon">
+              🚀
+            </div>
+          
+            <h3>Start Your Journey</h3>
+          
+            <p>
+              Create your personalized study roadmap
+              and track your progress every day.
+            </p>
+          
+            <span>
+              “Consistency beats motivation.”
+            </span>
+          
+          </div>
+        </div>
+      </div>
+
+    </div>
+ </section>
+
+ <section class="analytics">
+
+  <h2>Study Analytics</h2>
+
+  <div class="analytics-grid">
+
+    <div class="analytics-card">
+      <h3>✅ Tasks Completed</h3>
+      <p id="tasks-completed-stat">0</p>
+    </div>
+
+    <div class="analytics-card">
+      <h3>📈 Completion Rate</h3>
+      <p id="completion-rate-stat">0%</p>
+    </div>
+
+    <div class="analytics-card">
+      <h3>🔥 Current Streak</h3>
+      <p id="current-streak-stat">0</p>
+    </div>
+
+    <div class="analytics-card">
+      <h3>🏆 Best Streak</h3>
+      <p id="best-streak-stat">0</p>
+    </div>
+  </div>
+
+  <div class="weekly-progress">
+    <h3>Weekly Progress</h3>
+  
+    <div id="weekly-chart"></div>
+  </div>
+</section>
+
+  <div class="celebration-popup" id="celebration-popup">
+
+    <div class="celebration-content" style="text-align: center;">
+  
+      <h2>🎉 Amazing Work!</h2>
+  
+      <p>
+        You completed today’s study plan.
+        Keep building your streak!
+      </p>
+  
+      <button id="close-popup">
+        Continue
+      </button>
+  
+    </div>
+  
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
